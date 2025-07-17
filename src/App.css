@@ -1,0 +1,30 @@
+.app_title {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  padding: 70px;
+  color: #ffffff;
+  font-family: "Tektur", sans-serif;
+}
+
+.planet_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: flex-end;
+  gap: 150px;
+}
+
+.planet_showcase {
+  display: flex;
+  justify-content: center;
+  gap: 300px;
+}
+
+.planet_showcase_text {
+  color: white;
+  font-size: 20px;
+  max-width: 500px;
+  font-family: "Tektur", sans-serif;
+}
