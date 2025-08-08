@@ -3,12 +3,20 @@ import DisplayBox from './components/DisplayBox'
 import SpeechRecog from './components/SpeechRecog';
 import spaceBackground from "./assets/spaceBackground.png"
 import './App.css'
+import mercuryImage from './assets/mercury.png';
+import venusImage from './assets/venus.png';
+import earthImage from './assets/earth.png';
+import marsImage from './assets/mars.png';
+import jupiterImage from './assets/jupiter.png';
+import saturnImage from './assets/saturn.png';
+import uranusImage from './assets/uranus.png';
+import neptuneImage from './assets/neptune.png';
 
 function App() {
   const [showCase,setShowCase] = useState(false);
   const [chosenPlanet, setChosenPlanet] = useState("");
-  const planetPictures = {"Mercury":"src/assets/mercury.png","Venus":"src/assets/venus.png","Earth":"src/assets/earth.png",
-    "Mars":"src/assets/mars.png","Jupiter":"src/assets/jupiter.png","Saturn":"src/assets/saturn.png","Uranus":"src/assets/uranus.png","Neptune":"src/assets/neptune.png"};
+  const planetPictures = {"Mercury": mercuryImage,"Venus":venusImage,"Earth":earthImage,"Mars":marsImage,"Jupiter":jupiterImage,
+    "Saturn":saturnImage,"Uranus":uranusImage ,"Neptune":neptuneImage};
   const planetDescriptions = {
     "Mercury":"This planet is Mercury. It is a rocky planet and is closest to the sun. It is the smallest planet in the solar system and has no atmosphere; as such, the temperature on its surface ranges from extremely hot to extremely cold.",
     "Venus":"This planet is Venus. It is a rocky planet and is second closest to the sun. It is very hot and has a thick, acidic, pressurized atmosphere and has many active volcanoes on its surface.",
@@ -50,14 +58,14 @@ function App() {
         <SpeechRecog onSendTranscript={handleTranscript} />
       </div>
       {!showCase && <div className="planet_container">  {/* Hide this when actual planet is */}
-        <div><DisplayBox text={"MERCURY"} image_source={"src/assets/mercury.png"} image_scale={0.2} top_margin={"90px"}/></div>
-        <div><DisplayBox text={"VENUS"} image_source={"src/assets/venus.png"} image_scale={0.5} top_margin={"90px"}/></div>
-        <div><DisplayBox text={"EARTH"} image_source={"src/assets/earth.png"} image_scale={0.7} top_margin={"90px"}/></div>
-        <div><DisplayBox text={"MARS"} image_source={"src/assets/mars.png"} image_scale={0.5} top_margin={"90px"}/></div>
-        <div><DisplayBox text={"JUPITER"} image_source={"src/assets/jupiter.png"} image_scale={3} top_margin={"90px"}/></div>
-        <div><DisplayBox text={"SATURN"} image_source={"src/assets/saturn.png"} image_scale={3} top_margin={"90px"}/></div>
-        <div><DisplayBox text={"URANUS"} image_source={"src/assets/uranus.png"} image_scale={1.5} top_margin={"90px"}/></div>
-        <div><DisplayBox text={"NEPTUNE"} image_source={"src/assets/neptune.png"} image_scale={1} top_margin={"90px"}/></div>
+        <div><DisplayBox text={"MERCURY"} image_source={mercuryImage} image_scale={0.2} top_margin={"90px"}/></div>
+        <div><DisplayBox text={"VENUS"} image_source={venusImage} image_scale={0.5} top_margin={"90px"}/></div>
+        <div><DisplayBox text={"EARTH"} image_source={earthImage} image_scale={0.7} top_margin={"90px"}/></div>
+        <div><DisplayBox text={"MARS"} image_source={marsImage} image_scale={0.5} top_margin={"90px"}/></div>
+        <div><DisplayBox text={"JUPITER"} image_source={jupiterImage} image_scale={3} top_margin={"90px"}/></div>
+        <div><DisplayBox text={"SATURN"} image_source={saturnImage} image_scale={3} top_margin={"90px"}/></div>
+        <div><DisplayBox text={"URANUS"} image_source={uranusImage} image_scale={1.5} top_margin={"90px"}/></div>
+        <div><DisplayBox text={"NEPTUNE"} image_source={neptuneImage} image_scale={1} top_margin={"90px"}/></div>
       </div>}
       {showCase && <div className="planet_showcase">
         <div><DisplayBox text={chosenPlanet.toUpperCase()} image_source={planetPictures[chosenPlanet]} image_scale={9} top_margin={"250px"} font_size={"50px"} /></div>
